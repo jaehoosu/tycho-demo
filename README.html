@@ -1,60 +1,92 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>EclipseCon 2014 Tycho Tutorial</title>
- </head>
- <body>
+<head>
+	<meta charset="UTF-8">
+	<title>EclipseCon 2014 Tycho Tutorial</title>
+</head>
+<body>
 	<h1>EclipseCon 2014 Tycho Tutorial</h1>
 	<h2>Setup/Prerequisites</h2>
 
-	For the tutorial, we'll use a specifically prepared Eclipse Luna M6 distribution:
+	For the tutorial, we'll use a specifically prepared Eclipse Luna M6
+	distribution:
 	<ul>
-		<li>You should already have copied the distribution for your operating system and architecture from the USB stick. Note: Only use a 64-bit version if you also have a 64-bit JVM installed.</li>
+		<li>You should already have copied the distribution for your
+			operating system and architecture from the USB stick. Note: Only use
+			a 64-bit version if you also have a 64-bit JVM installed.</li>
 		<li>Unpack the distribution and start it.</li>
-		<li>When prompted for a workspace location, choose any empty or non-existing directory, e.g. by entering the relative path <tt>workspace</tt></li>
-	</ul>
-	If you want to repeat the exercises after the conference, you could also create the Eclipse installation yourself:
-	<ul>
-		<li><a href="http://www.eclipse.org/downloads/">Get an Eclipse distribution</a>
-			which includes the "Java Development Tools" and the "Plug-in Development Environment", e.g. the "Eclipse Standard" distribution.
+		<li>When prompted for a workspace location, choose any empty or
+			non-existing directory, e.g. by entering the relative path <tt>workspace</tt>
 		</li>
-		<li>Unpack it, start it, and use <tt>Help > Install New Software...</tt> to install <ul>
-			<li>"m2e - Maven Integration for Eclipse" from http://download.eclipse.org/releases/luna</li>
-			<li>"Eclipse 4 Tools" from http://download.vogella.com/luna/e4tools</li>
-			<li>"Tycho Project Configurators" from http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.7.0/N/0.7.0.201309291400/</li>
-		</ul></li>
+	</ul>
+	If you want to repeat the exercises after the conference, you could
+	also create the Eclipse installation yourself:
+	<ul>
+		<li><a href="http://www.eclipse.org/downloads/">Get an
+				Eclipse distribution</a> which includes the "Java Development Tools" and
+			the "Plug-in Development Environment", e.g. the "Eclipse Standard"
+			distribution.</li>
+		<li>Unpack it, start it, and use <tt>Help > Install New
+				Software...</tt> to install
+			<ul>
+				<li>"m2e - Maven Integration for Eclipse" from
+					http://download.eclipse.org/releases/luna</li>
+				<li>"Eclipse 4 Tools" from
+					http://download.vogella.com/luna/e4tools</li>
+				<li>"Tycho Project Configurators" from
+					http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.7.0/N/0.7.0.201309291400/</li>
+			</ul></li>
 	</ul>
 	<br />
 
-	<h2>Overview: Building an Eclipse 4 RCP application in five step-by-step exercises</h2>
+	<h2>Overview: Building an Eclipse 4 RCP application in five
+		step-by-step exercises</h2>
 
-	The hands-on exercises will guide you through setting up a typical Tycho build for an Eclipse 4 RCP application.
+	The hands-on exercises will guide you through setting up a typical
+	Tycho build for an Eclipse 4 RCP application.
 	<br />
 	<ul>
-		<li>We start from scratch with an Eclipse 4 sample application plugin,</li>
+		<li>We start from scratch with an Eclipse 4 sample application
+			plugin,</li>
 		<li>Add a simple unit test to make sure the plugin works, and</li>
 		<li>Create a feature for grouping the plugins we want to deliver.</li>
-		<li>Then, we create a p2 repository/update site containing our feature(s) and plugins, and</li>
-		<li>Finally, we create a ready-to-use distribution archive of our RCP application.</li>
+		<li>Then, we create a p2 repository/update site containing our
+			feature(s) and plugins, and</li>
+		<li>Finally, we create a ready-to-use distribution archive of our
+			RCP application.</li>
 	</ul>
 	<br />
 
 	<h2>Exercises</h2>
 	The tutorial consist of five exercises:
 	<ol>
-		<li><a href="exercises/Exercise_01_Create_RCP_Bundle/README.html">Build a Eclipse 4 RCP plugin</a></li>
-		<li><a href="exercises/Exercise_02_Add_Test_Fragment/tychodemo.parent/README.html">Build and execute a simple test</a></li>
-		<li><a href="exercises/Exercise_03_Add_Feature/tychodemo.parent/README.html">Add a feature</a></li>
-		<li><a href="exercises/Exercise_04_Add_P2_Repository/tychodemo.parent/README.html">Add a p2 repository</a></li>
-		<li><a href="exercises/Exercise_05_Add_Product/tychodemo.parent/README.html">Build a product</a> (<a href="exercises/Exercise_05_Solution/">solution</a>)</li>
+		<li><a href="exercises/Exercise_01_Create_RCP_Bundle/README.html">Build
+				a Eclipse 4 RCP plugin</a></li>
+		<li><a
+			href="exercises/Exercise_02_Add_Test_Fragment/tychodemo.parent/README.html">Build
+				and execute a simple test</a></li>
+		<li><a
+			href="exercises/Exercise_03_Add_Feature/tychodemo.parent/README.html">Add
+				a feature</a></li>
+		<li><a
+			href="exercises/Exercise_04_Add_P2_Repository/tychodemo.parent/README.html">Add
+				a p2 repository</a></li>
+		<li><a
+			href="exercises/Exercise_05_Add_Product/tychodemo.parent/README.html">Build
+				a product</a> (<a href="exercises/Exercise_05_Solution/">solution</a>)</li>
 	</ol>
-	For each exercise, there are detailed step-by-step instructions with screenshots.
-	All steps will also be shown on the projector, but if you should miss a step in the presentation, you can still follow along using these instructions.
-	<br />In most exercises, we'll continue to work with the projects and files created in the previous exercise.
-	In case you don't manage to complete one of the exercises, there are recovery instructions at the beginning of the each exercise.
+	For each exercise, there are detailed step-by-step instructions with
+	screenshots. All steps will also be shown on the projector, but if you
+	should miss a step in the presentation, you can still follow along
+	using these instructions.
+	<br />In most exercises, we'll continue to work with the projects and
+	files created in the previous exercise. In case you don't manage to
+	complete one of the exercises, there are recovery instructions at the
+	beginning of the each exercise.
 	<br />
-	<br />If you successfully installed everything under "Setup" above, you can now jump to the
-	<a href="exercises/Exercise_01_Create_RCP_Bundle/README.html">first exercise</a>.
+	<br />If you successfully installed everything under "Setup" above,
+	you can now jump to the
+	<a href="exercises/Exercise_01_Create_RCP_Bundle/README.html">first
+		exercise</a>.
 </body>
 </html>
